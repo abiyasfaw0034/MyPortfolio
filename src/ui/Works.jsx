@@ -33,7 +33,10 @@ const projects = [
 ];
 function Works() {
   return (
-    <div className="bg-gradient-to-r from-gray-900 via-black to-gray-900 text-white py-20 px-10">
+    <div
+      id="work"
+      className="bg-gradient-to-r from-gray-900 via-black to-gray-900 text-white py-20 px-10"
+    >
       <div className="max-w-5xl mx-auto">
         <h2 className="text-5xl font-serif font-bold mb-10 text-center">
           My Works

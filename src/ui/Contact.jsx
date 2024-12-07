@@ -2,7 +2,7 @@ import { FaEnvelope, FaInstagram, FaTelegram, FaGithub } from "react-icons/fa";
 
 function Contact() {
   return (
-    <footer className="bg-gray-900 text-white py-10">
+    <footer id="contact" className="bg-gray-900 text-white py-10">
       <div className="max-w-4xl mx-auto text-center">
         <h2 className="text-4xl font-serif font-bold  mb-10 py-5">
           Get in Touch
