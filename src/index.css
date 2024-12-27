@@ -4,6 +4,10 @@
 
 html {
   scroll-behavior: smooth;
+  background-color: rgb(rgb(6, 2, 27), green, blue);
+}
+body {
+  background-color: rgb(6, 8, 27);
 }
 /* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
