@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useRef } from "react";
 import {
   FaEnvelope,
   FaInstagram,
@@ -9,38 +9,24 @@ import {
 import emailjs from "@emailjs/browser";
 
 function Contact() {
-  const [formData, setFormData] = useState({
-    user_name: "",
-    user_email: "",
-    message: "",
-  });
+  const form = useRef();
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
-
-  const handleSubmit = (e) => {
+  const sendEmail = (e) => {
     e.preventDefault();
 
     emailjs
-      .send(
-        "service_0rxawmm", // Replace with your EmailJS Service ID
-        "template_zeqfrlm", // Replace with your EmailJS Template ID
-        formData,
-        "WtM3DgqHhQijQCJQg" // Replace with your EmailJS Public Key
-      )
+      .sendForm("service_0rxawmm", "template_f46qy2i", form.current, {
+        publicKey: "WtM3DgqHhQijQCJQg", // Replace with your actual public key
+      })
       .then(
         () => {
           console.log("SUCCESS!");
-          alert("SUCCESS!");
-          setFormData({ user_name: "", user_email: "", message: "" });
+          alert("Message sent successfully!");
+          form.current.reset();
         },
         (error) => {
           console.log("FAILED...", error.text);
+          alert("Failed to send message. Please try again.");
         }
       );
   };
@@ -105,7 +91,8 @@ function Contact() {
           {/* Contact Form */}
           <div>
             <form
-              onSubmit={handleSubmit}
+              ref={form}
+              onSubmit={sendEmail}
               className="bg-gray-800 p-6 rounded-lg shadow-lg"
             >
               <div className="mb-4">
@@ -115,9 +102,7 @@ function Contact() {
                 <input
                   type="text"
                   id="name"
-                  name="user_name" // Updated to match template
-                  value={formData.user_name}
-                  onChange={handleChange}
+                  name="user_name"
                   placeholder="Your Name"
                   required
                   className="w-full px-4 py-2 rounded-lg bg-gray-700 text-gray-200 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-teal-500"
@@ -131,8 +116,6 @@ function Contact() {
                   type="email"
                   id="email"
                   name="user_email"
-                  value={formData.user_email}
-                  onChange={handleChange} // Ensure onChange is properly updating the state
                   placeholder="Your Email"
                   required
                   className="w-full px-4 py-2 rounded-lg bg-gray-700 text-gray-200 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-teal-500"
@@ -147,8 +130,6 @@ function Contact() {
                   id="message"
                   name="message"
                   rows="4"
-                  value={formData.message}
-                  onChange={handleChange}
                   placeholder="Your Message"
                   required
                   className="w-full px-4 py-2 rounded-lg bg-gray-700 text-gray-200 border border-gray-600 focus:outline-none focus:ring-2 focus:ring-teal-500"
