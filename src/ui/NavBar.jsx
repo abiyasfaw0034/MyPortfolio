@@ -15,7 +15,12 @@ function NavBar() {
   return (
     <div className="relative">
       <div className="flex flex-row justify-between bg-gradient-to-r from-gray-900 via-black to-gray-900 text-gray-200 text-xl py-5 px-10 border-b border-b-gray-700">
-        <div className="text-teal-400 font-bold text-2xl">Logo</div>
+        <a
+          className="text-teal-400 font-bold text-3xl hover:cursor-pointer"
+          onClick={() => handleScrollToSection("front")}
+        >
+          &lt;/A&gt;
+        </a>
         <div className="hidden md:flex gap-24">
           <div
             onClick={() => handleScrollToSection("about")}

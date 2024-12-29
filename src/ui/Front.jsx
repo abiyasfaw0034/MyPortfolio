@@ -4,7 +4,10 @@ import { fadeIn } from "../variants";
 
 function Front() {
   return (
-    <div className="min-h-screen grid sm:grid-cols-2 grid-cols-1  bg-gradient-to-r from-gray-900 via-black to-gray-900 text-white ">
+    <div
+      id="front"
+      className="min-h-screen grid sm:grid-cols-2 grid-cols-1  bg-gradient-to-r from-gray-900 via-black to-gray-900 text-white "
+    >
       {/* Left Section */}
       <motion.div
         variants={fadeIn("down", 0.1)} // Pass direction and delay

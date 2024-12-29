@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import { useRef, useState } from "react";
 import {
   FaEnvelope,
   FaInstagram,
@@ -10,6 +10,7 @@ import emailjs from "@emailjs/browser";
 
 function Contact() {
   const form = useRef();
+  const [alert, setAlert] = useState(null); // State for managing alerts
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -20,13 +21,17 @@ function Contact() {
       })
       .then(
         () => {
-          console.log("SUCCESS!");
-          // alert("Message sent successfully!");
+          setAlert({ type: "success", message: "Message sent successfully!" });
           form.current.reset();
+          setTimeout(() => setAlert(null), 3000); // Hide alert after 3 seconds
         },
         (error) => {
           console.log("FAILED...", error.text);
-          alert("Failed to send message. Please try again.");
+          setAlert({
+            type: "failure",
+            message: "Failed to send message. Please try again.",
+          });
+          setTimeout(() => setAlert(null), 3000); // Hide alert after 3 seconds
         }
       );
   };
@@ -37,6 +42,20 @@ function Contact() {
         <h2 className="text-4xl font-serif font-bold text-center mb-20">
           Get in Touch
         </h2>
+
+        {/* Alert Box */}
+        {alert && (
+          <div
+            className={`text-center p-4 rounded-lg mb-4 ${
+              alert.type === "success"
+                ? "bg-green-500 text-white"
+                : "bg-red-500 text-white"
+            }`}
+          >
+            {alert.message}
+          </div>
+        )}
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           {/* Contact Information */}
           <div className="space-y-6">
