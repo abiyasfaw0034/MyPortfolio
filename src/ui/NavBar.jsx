@@ -47,7 +47,7 @@ function NavBar() {
 
       {/* Sidebar Menu */}
       {menuOpen && (
-        <div className="absolute top-0 right-0 bg-gray-900 w-64 h-screen text-gray-200 flex flex-col items-start px-5 py-10 shadow-lg md:hidden">
+        <div className="absolute z-10 top-0 right-0 bg-gray-900 w-64 h-screen text-gray-200 flex flex-col items-start px-5 py-10 shadow-lg md:hidden">
           <div
             onClick={() => handleScrollToSection("about")}
             className="cursor-pointer hover:text-teal-400 transition-colors mb-5"
