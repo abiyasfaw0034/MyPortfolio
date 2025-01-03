@@ -12,21 +12,8 @@ function About() {
   return (
     <div id="about" className="bg-gray-900 text-white py-24 px-10">
       <div className="max-w-3xl mx-auto text-center">
-        <motion.h2
-          variants={fadeIn("down", 0.1)} // Pass direction and delay
-          initial="hidden"
-          whileInView={"show"}
-          viewport={{ once: false, amount: 0.7 }}
-          className="text-5xl font-serif font-bold mb-10"
-        >
-          About Me
-        </motion.h2>
-        <motion.div
-          variants={fadeIn("up", 0.1)} // Pass direction and delay
-          initial="hidden"
-          whileInView={"show"}
-          viewport={{ once: false, amount: 0.7 }}
-        >
+        <h2 className="text-5xl font-serif font-bold mb-10">About Me</h2>
+        <div>
           <p className="text-lg leading-relaxed mb-6">
             Hi, I’m <span className="font-bold text-teal-400">Abiy Asfaw</span>,
             a passionate{" "}
@@ -52,7 +39,7 @@ function About() {
             tune, or competing on the basketball court, I strive to bring
             dedication and enthusiasm to everything I do.
           </p>
-        </motion.div>
+        </div>
         {/* Professional Skillset Section */}
         <div className="mt-10">
           <h3 className="text-3xl font-serif font-bold mb-5">
