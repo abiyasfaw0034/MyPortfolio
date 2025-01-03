@@ -115,7 +115,10 @@ function Contact() {
               className="bg-gray-800 p-6 rounded-lg shadow-lg"
             >
               <div className="mb-4">
-                <label htmlFor="name" className="block text-gray-300 mb-2">
+                <label
+                  htmlFor="name"
+                  className="block text-gray-300 mb-2 text-left"
+                >
                   Name
                 </label>
                 <input
@@ -128,7 +131,10 @@ function Contact() {
                 />
               </div>
               <div className="mb-4">
-                <label htmlFor="email" className="block text-gray-300 mb-2">
+                <label
+                  htmlFor="email"
+                  className="block text-gray-300 mb-2 text-left"
+                >
                   Email
                 </label>
                 <input
@@ -142,7 +148,10 @@ function Contact() {
               </div>
 
               <div className="mb-4">
-                <label htmlFor="message" className="block text-gray-300 mb-2">
+                <label
+                  htmlFor="message"
+                  className="block text-gray-300 mb-2 text-left"
+                >
                   Message
                 </label>
                 <textarea
