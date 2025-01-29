@@ -37,7 +37,7 @@ function Contact() {
   };
 
   return (
-    <footer id="contact" className="bg-gray-900 text-white py-10">
+    <footer id="contact" className="bg-gray-900 text-white py-10 px-16">
       <div className="max-w-6xl mx-auto px-4">
         <h2 className="text-4xl font-serif font-bold text-center mb-20">
           Get in Touch

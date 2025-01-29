@@ -28,9 +28,7 @@ function Front() {
         </div>
         <div>
           <h1 className="text-4xl  font-merriweather">I am Abiy Asfaw</h1>
-          <p className=" text-lg text-gray-600">
-            A student at University of Addis Ababa
-          </p>
+          <p className=" text-lg text-gray-600">Full stack web developer</p>
         </div>
       </motion.div>
 
