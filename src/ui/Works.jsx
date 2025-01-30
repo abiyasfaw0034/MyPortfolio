@@ -60,7 +60,7 @@ function Works() {
                 <p className="text-gray-300 mt-2">{project.description}</p>
                 <div className="flex justify-between mt-4">
                   <a
-                    href={project.github}
+                    href={project.link}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-teal-400 hover:underline"
